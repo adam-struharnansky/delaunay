@@ -1,11 +1,6 @@
 from turtle import *    # toto je namiesto turtle, aby sa dal vytvoriť root
 from random import randrange as rr, randint as ri, choice as rch
 
-##root = Tk()  
-##root.wd, root.ht = 880, 820  
-##root.title('Okno s násobnými kanvasmi')  
-##root.geometry('{}x{}+246+8'.format(root.wd, root.ht))  
-##root.configure(background = 'gray80')  # farba pozadia okna
 
 def toRGB(color):
     if isinstance(color, str):        	# meno alebo Tk color string

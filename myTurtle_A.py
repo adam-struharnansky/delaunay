@@ -4,18 +4,18 @@ from random import randrange as rr, randint as ri, choice as rch, shuffle
 from math import cos, radians
 
 colormode(255)
-delay(0)
+# delay(0)
 
 class MyTurtle_A(Turtle):
     def __init__(self, x=0, y=0, h=90):
         super().__init__()
         if isinstance(x, tuple) and h == None:
             x, y = x		
-        self.ht()
+        # self.ht()
         self.x, self.y, self.h = x, y, h
         self.state = list()
         self.resizemode('auto')
-        self.speed(0)
+        # self.speed(0)
         self.home()
 
     def home(self):
