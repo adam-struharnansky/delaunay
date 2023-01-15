@@ -1,10 +1,8 @@
 import random
-import math
 from copy import deepcopy
 
 from myColor import MyColor
 from auxiliary_math import polygon_area, length, extreme, fit_circle_in_rectangle, circle, half_circle
-from colors import random_hsv
 
 
 MIN_AREA = 80000
@@ -14,7 +12,7 @@ CIRCLES_NUMBER = 12
 TRIES_NUMBER = 200
 
 
-def recursive_circles_delaunay(t, points, color):
+def recursive_circles_delaunay(t: object, points: list, color: MyColor) -> None:
     if polygon_area(deepcopy(points)) < MIN_AREA:
         color = color.closeHSV(h=30, s=10, v=10)
         t.ptsGon(points, color, color)

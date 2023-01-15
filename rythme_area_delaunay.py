@@ -1,7 +1,7 @@
 import random
 
 from myColor import MyColor
-from auxiliary_math import  half_circle
+from auxiliary_math import half_circle
 from colors import random_hsv
 from rythme_line_delaunay import circle_delaunay
 
@@ -11,7 +11,7 @@ RANDOM_CIRCLES_RATIO = 2 / 3
 COLORS = 3
 
 
-def rythme_area_delaunay(t, start, columns, rows, side):
+def rythme_area_delaunay(t: object, start: tuple, columns: int, rows: int, side: float) -> None:
     # background
     for i in range(0, rows):
         for j in range(0, columns):
@@ -50,5 +50,3 @@ def rythme_area_delaunay(t, start, columns, rows, side):
         for j in range(0, columns // 3):
             centre = ((3 * i + 2) * side + start[0], (3 * j + 2) * side + start[1])
             circle_delaunay(t, centre, side, [MyColor('black'), MyColor('white')])
-
-    pass

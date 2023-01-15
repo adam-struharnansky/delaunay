@@ -1,9 +1,7 @@
 import random
-import math
-from copy import deepcopy
 
 from myColor import MyColor
-from auxiliary_math import polygon_area, length, extreme, fit_circle_in_rectangle, circle, half_circle
+from auxiliary_math import length, circle, half_circle
 from colors import random_hsv
 
 
@@ -11,7 +9,7 @@ CIRCLE_POINTS = 60
 RANDOM_CIRCLES_RATIO = 2 / 3
 
 
-def circle_delaunay(t, centre, radius, colors):
+def circle_delaunay(t: object, centre: tuple, radius: float, colors: list) -> None:
     if random.uniform(0, 1) < 1 / 2:
         circle_color = colors[random.randrange(0, len(colors))]
         t.ptsGon(circle(centre, radius, CIRCLE_POINTS), circle_color, circle_color)
@@ -36,12 +34,12 @@ def circle_delaunay(t, centre, radius, colors):
                          first_color)
 
 
-def rythme_line_delaunay(t, start, end, segments):
+def rythme_line_delaunay(t: object, start: tuple, end: tuple, segments: int) -> None:
     segments = segments * 3
     vector = ((end[0] - start[0]) / segments, (end[1] - start[1]) / segments)
     segment_length = length(start, end) / segments
 
-    # najskor to prejst z vacsimi, potom z mensimi kruhmi, ktore budu na vrchu
+    # starting with large circles in background, moving towards smaller in frontground
     for _ in range(0, segments // 3):
         segment = random.randrange(1, segments - 1)
         centre = (start[0] + segment * vector[0], start[1] + segment * vector[1])
@@ -69,5 +67,3 @@ def rythme_line_delaunay(t, start, end, segments):
         if i % 3 == 1:
             centre = (start[0] + i * vector[0], start[1] + i * vector[1])
             circle_delaunay(t, centre, segment_length / 2, [MyColor('white'), MyColor('black')])
-
-    pass

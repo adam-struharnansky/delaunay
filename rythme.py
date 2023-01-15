@@ -2,13 +2,12 @@ import random
 
 from myTurtle_A import *
 import colors as c
-import turtle
 
 three = []
 coordinates = [(0, 280), (0, 0), (0, -280)]
 
 
-def draw_circle(t: MyTurtle_A, radius: int, angle: int):
+def draw_circle(t: MyTurtle_A, radius: float, angle: float) -> None:
     t.begin_fill()
     t.circle(radius, angle)
     h = t.heading()
@@ -20,7 +19,7 @@ def draw_circle(t: MyTurtle_A, radius: int, angle: int):
     t.jump_to(pos)
 
 
-def background(t: MyTurtle_A, bg_radius):
+def background(t: MyTurtle_A, bg_radius: float) -> None:
     t.setheading(180)
     t.jump_to(0, bg_radius + 50)
     top = 400
@@ -48,7 +47,7 @@ def background(t: MyTurtle_A, bg_radius):
         t.setheading(0)
 
 
-def top_three(t: MyTurtle_A):
+def top_three(t: MyTurtle_A) -> None:
     t.jump_to(0, 0)
     for i in range(28):
         area = random.randint(0, 2)
@@ -86,7 +85,7 @@ def top_three(t: MyTurtle_A):
         three[area] -= change
 
 
-def rythme(t: MyTurtle_A, bg_radius, top_radius):
+def rythme(t: MyTurtle_A, bg_radius: float, top_radius: float) -> None:
     background(t, bg_radius)
     for i in range(3):
         three.append(top_radius)
