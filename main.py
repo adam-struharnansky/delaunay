@@ -9,6 +9,7 @@ from divided_circles_delaunay import divided_circles_delaunay
 from abstract_swirl import abstract_swirl
 from rythme import rythme
 from recursive_circles_delaunay import recursive_circles_delaunay
+from rythme_line_delaunay import rythme_line_delaunay
 
 
 t = MyTurtle_A()
@@ -22,5 +23,7 @@ delay(0)
 # abstract_swirl(t, 300)
 # rythme(t, 350, 140)
 # recursive_circles_delaunay(t, [(-200, -200), (-200, 200), (200, 200), (200, -200)], random_hsv())
+rythme_line_delaunay(t, (0, 250), (0, -250), 8)
+
 
 turtle.done()
