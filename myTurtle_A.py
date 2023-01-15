@@ -15,7 +15,7 @@ class MyTurtle_A(Turtle):
         self.x, self.y, self.h = x, y, h
         self.state = list()
         self.resizemode('auto')
-        # self.speed(0)
+        self.speed(0)
         self.home()
 
     def home(self):

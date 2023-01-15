@@ -59,3 +59,26 @@ def abstract_swirl(t: MyTurtle_A, radius: int):
         radius -= random.randint(10, 35)
         if i > 0:
             previous = previous[-2:]
+
+    t.color(c.any_swirl())
+    t.jump_to(0, 0)
+    t.setheading(180)
+    t.jump_by(0, radius)
+    t.begin_fill()
+    t.circle(radius)
+    t.end_fill()
+
+    t.setheading(180)
+    t.jump_to(0, -45)
+    t.color(c.any_swirl())
+    t.begin_fill()
+    t.circle(110, 180)
+    t.end_fill()
+
+    t.setheading(0)
+    t.jump_to(0, 45)
+    t.color(c.any_swirl())
+    t.begin_fill()
+    t.circle(110, 180)
+    t.end_fill()
+
